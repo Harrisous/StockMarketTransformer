@@ -93,6 +93,7 @@ def get_env_embedding():
 # page start
 st.set_page_config(page_title="Financial Time Series Forecasting", layout="wide")
 st.title("Financial Time Series Forecasting")
+st.write("contact: hl535@duke.edu")
 
 # two selection boxed: ticker selection and mode selection
 col1, col2 = st.columns([3, 2])
