@@ -205,7 +205,7 @@ if selected_ticker:
                     high=[pred_df['High'].iloc[i]],
                     low=[pred_df['Low'].iloc[i]],
                     close=[pred_df['Close'].iloc[i]],
-                    increasing_line_color='black',
+                    increasing_line_color='white',
                     decreasing_line_color='gray',
                     showlegend=False
                 ))
@@ -254,7 +254,7 @@ if selected_ticker:
                 high=[pred_df['High'].iloc[i]],
                 low=[pred_df['Low'].iloc[i]],
                 close=[pred_df['Close'].iloc[i]],
-                increasing_line_color='black',
+                increasing_line_color='white',
                 decreasing_line_color='gray',
                 showlegend=False
             ))
