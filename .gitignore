@@ -175,6 +175,5 @@ cython_debug/
 
 # self-defined
 data/**/*.csv
-app_models/*
 models/**/*.pth
 models/*.save
