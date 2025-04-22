@@ -39,7 +39,7 @@ ticker_index_list = sorted(tickers)
 models_dir = os.path.join(script_dir, "app_models")
 
 env_embeddings_path =  os.path.join(models_dir, 'env_embeddings.csv')
-selected_model_path = os.path.join(models_dir, 'transformer_model_checkpoint_epoch_b2.pth')
+selected_model_path = os.path.join(models_dir, 'transformer_model.pth')
 ticker_scaler_path = os.path.join(models_dir, 'ticker_scaler.save')
 ticker_autoencoder_path = os.path.join(models_dir, 'ticker_autoencoder.pth')
 # not implemented for the time being
@@ -93,7 +93,8 @@ def get_env_embedding():
 # page start
 st.set_page_config(page_title="Financial Time Series Forecasting", layout="wide")
 st.title("Financial Time Series Forecasting")
-st.write("contact: hl535@duke.edu")
+st.write("Contact: hl535@duke.edu")
+st.write("LinkedIn: www.linkedin.com/in/haochen-harry-li")
 
 # two selection boxed: ticker selection and mode selection
 col1, col2 = st.columns([3, 2])
