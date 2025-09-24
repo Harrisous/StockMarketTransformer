@@ -27,7 +27,7 @@ Themes:
 **Model specs**
 The model is a transformer with a Mixture-of-Experts (MoE) style feedforward block, where a router dynamically combines outputs from multiple experts for each token in the sequence. This design allows for more flexible and powerful modeling of complex time series data.
 
-In each transformer block, by the order of input to output, there are LayerNorm [${LayerNorm}(x) = \gamma \cdot \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta$],  multiheadattention layer, add&norm(with skip connection), LayerNorm, router & MoE layer (shared+specialized), and add&norm layer(with skip connection).
+In each transformer block, by the order of input to output, there are LayerNorm ${LayerNorm}(x) = \gamma \cdot \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta$,  multiheadattention layer, add&norm(with skip connection), LayerNorm, router & MoE layer (shared+specialized), and add&norm layer(with skip connection).
 
 **Inference:**  
 During inference or testing on unseen data, the `predict` function generates predictions without requiring target labels.
