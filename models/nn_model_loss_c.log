@@ -1,0 +1,6 @@
+load model: b2 checkpoint
+LR=10e-6 RMSprop, scheduler
+epoch,loss,time
+1,22211668.38212943,00:56:30
+2,11392878.098948875,01:52:58
+3,66116572.78459406,02:49:27

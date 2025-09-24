@@ -1,27 +1,20 @@
-# AIPI540_Final_Project
-
-by Haochen Li
-
----
+# Stock Market Transformer (Extended From AIPI540_Final_Project)
+# by Haochen Li
 
 ## Topic
-
-**Stock market prediction using environment embedding and transformer.**
-
----
-
-## Themes
-
-- Finance
-- Technology
-
----
+**Stock market prediction using environment embedding and transformer.**  
+The idea is first to encode stock parameters (prices, volumes), market parameters (indices), economic parameters into vector using autoencoder. Then a transformer with MoE and multi-head attention can be trained based on time series of encoded vectors. The aim is to predict the future stock price(s), and the loss metrics in this project is the MSE. A streamlit site can be built using the trained model and provide visualization for predictions. For detail please see below     
+Themes:
+- Finance & Technology
+- Trading
+- Time Series
+- Transformer
 
 ## Approaches
 
 - **Naive approach:** Mean model
 - **Classical ML approach:** Non-deep learning techniques
-- **Deep learning approach:** Neural network-based (Transformer)
+- **Deep learning approach:** Neural network-based (Transformer) (main focus)
 
 ---
 
@@ -39,46 +32,7 @@ In each transformer block, by the order of input to output, there are LayerNorm 
 **Inference:**  
 During inference or testing on unseen data, the `predict` function generates predictions without requiring target labels.
 
----
-
-## Deliverables (AIPI540)
-
-1. **Interactive Proof-of-Concept Application:**  
-   - Publicly accessible via the internet for at least one week post-submission.
-   - Any front-end framework is allowed (e.g., Flask, Streamlit, Dash).
-   - Model deployment can use any cloud platform (GCP, Azure, AWS).
-
-2. **10-Minute Presentation Video:**  
-   - Submit as a video link (YouTube, WarpWire, Panopto).
-   - Must include:
-     - Problem statement
-     - Data sources
-     - Review of relevant literature/previous efforts
-     - Model evaluation process & metric selection
-     - Modeling approach
-     - Data processing pipeline
-     - Models evaluated & selected (at least 1 non-deep learning and 1 deep learning model)
-     - Comparison to naive approach
-     - Brief project demo
-     - Results and conclusions
-     - Ethics statement
-
-3. **Demo Day "Pitch":**  
-   - Max 3 minutes, max 3 slides.
-   - Focus on demonstration for a broad audience:
-     - Problem/motivation (1 slide)
-     - Approach overview (1 slide)
-     - Project demo
-     - Results/conclusions/interesting findings (1 slide)
-   - *Note: For public demo, avoid sharing proprietary information if you plan to commercialize.*
-
-4. **Deployed Application Link:**  
-   - Submit a working, publicly accessible web/mobile interface deployed on a cloud platform.
-
----
-
 ## Process for Replicating the Project
-
 1. Clone the repository.
 2. Create a virtual environment.
 3. Install required libraries.
@@ -90,21 +44,39 @@ During inference or testing on unseen data, the `predict` function generates pre
 7. Run `model_test_naive.py` to evaluate the naive model (real-time training).
 8. Run `model_test_ml.py` to evaluate the ML model (real-time training).
 
----
 
-## Running the App
+## Have a try
 
-To launch locally:
+Online streamlit demo: https://harry-demo.streamlit.app/ (based on not converged version)  
+10-min introduction video: https://youtu.be/nIk1aV_UYc0 (based on not converged version)  
+
+To launch locally:  
+1. clone the repo
+2. create and activate `.venv`
+(optional): substitute `./app_models/transformer_model.pth` with latest model (see below) and rename to `transformer_model.pth` to run the converged model. 
+3. run the app using the following:
 ```bash
 streamlit run app.py
 ```
+
+## Latest Content Update (Jun 09):
+Latest model (pth, converged): `./models/checkpoints/transformer_model_checkpoint_epoch_63.pth`  
+Latest training loss log: `./models/nn_model_loss.log` or `./scripts/results/nn_train_loss.txt`  
+Result: converged loss is still huge, and the backtesting result is only good for open percentage change. Should consider using simpler model and expand training data(without MoE).
 ---
 
-## Continuous Development Log
+## Development Log
+- Apr 22, 2025
+   1. Build initial model ✅ (not converged version)
+   2. Submit demo app and video for AIPI 540 ✅ 
 
-- Jun 6, 2026: 
+- Jun 6, 2025
    1. added model specs; ✅
-   2. start training original model until convergence; 
-   3. update the prediction functionality to include most recent macro data. 
+   2. start training original model until convergence; ✅
 
-- Next plan: try smaller time interals and seek for short term opportunities; prediction target shift to mean and variation for result interpretability.
+- Jun 09, 2025
+   1. Get converged result ✅
+   3. update the prediction functionality to include most recent macro data. ✅ (applied to app.py only since it will pull most recent financial data)
+
+
+- Future plan: evaluation; try smaller time interals and seek for short term opportunities; prediction target shift to mean and variation for result interpretability.

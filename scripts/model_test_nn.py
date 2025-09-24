@@ -64,7 +64,7 @@ def test():
 
     # model param file
     model_dir = os.path.join(script_dir, '..', 'models')
-    selected_ckpt = os.path.join(model_dir, 'selected', 'transformer_model_checkpoint_epoch_b2.pth')
+    selected_ckpt = os.path.join(model_dir, 'selected', 'transformer_model_checkpoint_epoch_63.pth')
 
     # autoencoder and scaler
     autoencoder_path = os.path.join(model_dir, 'ticker_autoencoder.pth')

@@ -1,0 +1,6 @@
+load model: a3 checkpoint
+LR=10e-5, RMSprop, scheduler
+epoch,loss,time
+1,13702780.118040927,00:56:31
+2,154695.08842366934,01:53:01
+3,22147523.63508011,02:49:36
