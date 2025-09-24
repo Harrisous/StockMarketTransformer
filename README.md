@@ -1,4 +1,4 @@
-# Stock Market Transformer (Extended From AIPI540_Final_Project)
+# Stock Market Transformer (Developed From AIPI540_Final_Project)
 # by Haochen Li
 
 ## Topic
@@ -59,10 +59,12 @@ To launch locally:
 streamlit run app.py
 ```
 
-## Latest Content Update (Jun 09):
+## Latest Content Update (Jun 09):  
+
 Latest model (pth, converged): `./models/checkpoints/transformer_model_checkpoint_epoch_63.pth`  
 Latest training loss log: `./models/nn_model_loss.log` or `./scripts/results/nn_train_loss.txt`  
 Result: converged loss is still huge, and the backtesting result is only good for open percentage change. Should consider using simpler model and expand training data(without MoE).
+
 ---
 
 ## Development Log
