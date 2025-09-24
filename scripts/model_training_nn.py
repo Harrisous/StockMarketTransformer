@@ -36,7 +36,7 @@ INPUT_DIM = 8  # stock dim (4) + env embedding dim (4)
 OUTPUT_DIM = 4  # output dim
 BATCH_SIZE = 256 - 64  # 256 - 64
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-EPOCHS = 10
+EPOCHS = 100 #****************important! Only training large epochs when time allows
 LR = 1e-4
 FILE_BATCH_SIZE = 100
 

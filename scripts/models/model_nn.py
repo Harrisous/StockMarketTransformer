@@ -101,7 +101,7 @@ class TransformerBlock(nn.Module):
         expert_outputs = torch.stack(expert_outputs, dim=2)  # [batch, seq_len, num_experts, embed_dim]
         router_weights = router_weights.unsqueeze(-1)        # [batch, seq_len, num_experts, 1]
         ff_output = (expert_outputs * router_weights).sum(dim=2)  # [batch, seq_len, embed_dim]
-        x = self.norm2(x + ff_output)
+        x = self.norm2(x + ff_output) 
         return x
 
 class TransformerForMultiStepPrediction(nn.Module):
